@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Secure-Personal-Diary" />
+		<Option title="secure-personal-diary" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Secure-Personal-Diary" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/secure-personal-diary" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Secure-Personal-Diary" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/secure-personal-diary" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,11 +31,51 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="add_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="change_password.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="delete_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="diary.h" />
+		<Unit filename="encryption.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="erase_everything.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fucntion_prototypes.h" />
+		<Unit filename="hash.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="modify_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="set_pass.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="show_today_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="time.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="view_all_records.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="view_record.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
-			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

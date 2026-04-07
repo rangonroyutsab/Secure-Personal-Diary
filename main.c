@@ -4,17 +4,14 @@
 #include <string.h>
 #include <time.h>
 
-#include "diary.h"    //contains diary functions
-#include "hash.h"     // contains the hashing functions
-#include "misc.h"     // contains delay() & show_Time()
-#include "password.h" //contains setpass() & password_change()
-#include "test_header.h"
+#include "fucntion_prototypes.h"
+#include "diary.h"
 
 #define DATE_SIZE 50
 #define TIME_SIZE 50
 #define NAME_SIZE 500
 
-typedef long long LL;
+typedef long long int LL;
 
 int user_level = 0;
 
@@ -24,15 +21,25 @@ void menu () {
   while (flag) {
     system ("cls");
     show_Time ();
-    printf ("Current User: ");
+    printf ("Current User: \n");
+    printf ("########################\n");
+
     switch (user_level) {
-    case 0: printf ("Guest\n"); break;
-    case 1: printf ("Life Partner\n"); break;
-    case 2: printf ("Admin\n"); break;
+    case 0:
+      printf ("#        \x1b[32mGuest\x1b[0m         #\n");
+      break;
+    case 1:
+      printf ("#     \x1b[33mLife Partner\x1b[0m     #\n");
+      break;
+    case 2:
+      printf ("#        \x1b[36mAdmin\x1b[0m         #\n");
+      break;
     }
-    printf ("*******************************************************************************\n");
+    printf ("########################\n");
     printf ("\n");
-    printf (">> MENU << \n");
+    show_today_record(user_level);
+    printf ("\n");
+    printf (">> \x1b[1mMENU\x1b[0m << \n");
     printf ("1. Add Record\n");
     printf ("2. View Record\n");
     printf ("3. Modify Record\n");
@@ -44,7 +51,7 @@ void menu () {
     ch     = _getch ();
     choice = ch - '0';
     printf ("%d\n", choice);
-    // delay(1);
+
     switch (choice) {
     case 1: {
       add_record (user_level);
@@ -100,13 +107,13 @@ again:
     char s[100];
     char ch;
     int choice, j;
-    LL a, b;
+    long long int a, b;
 
     printf ("*******************************************************************************\n");
-    printf ("******************** WELCOME TO YOUR SECURE PERSONAL DIARY ********************\n");
+    printf ("******************** \x1b[46m\x1b[30mWELCOME TO YOUR SECURED PERSONAL DIARY\x1b[0m *******************\n");
     printf ("*******************************************************************************\n");
     printf ("*                                                                             *\n");
-    printf ("*                              LOGIN MENU                                     *\n");
+    printf ("*                              \x1b[1mLOGIN MENU\x1b[0m                                     *\n");
     printf ("* SELECT USER:                                                                *\n");
     printf ("* 1. Admin                                                                    *\n");
     printf ("* 2. Life Partner                                                             *\n");
@@ -114,21 +121,23 @@ again:
     printf ("* 4. Exit                                                                     *\n");
 
     printf ("* Choice: ");
-    ch     = _getch ();
-    choice = ch - '0';
-    printf ("%d\n", choice);
-    // delay(1);
+    scanf("%d", &choice);
 
     switch (choice) {
-    case 1: user_level = 2; break;
-    case 2: user_level = 1; break;
-    case 3: user_level = 0; break;
+    case 1:
+      user_level = 2;
+      break;
+    case 2:
+      user_level = 1;
+      break;
+    case 3:
+      user_level = 0;
+      break;
     case 4:
-      printf ("                           *** Exiting ...***\n");
-      delay (1);
+      printf ("                           \x1b[6m***  Exiting  ***\x1b[0m\n");
       exit (1);
     default:
-      printf ("                          *** Invalid Choice ***\n");
+      printf ("                          \x1b[6m*** Invalid Choice ***\x1b[0m\n");
       delay (1);
       goto again;
     }
@@ -141,32 +150,33 @@ again:
       FILE* fp;
 
       if (user_level == 2) {
-        fp = fopen ("admin_pass", "r");
+        fp = fopen ("admin_pass.txt", "r");
 
         if (fp == NULL) {
+          erase_everything();
           setpass (user_level);
-          printf ("                     *** Press any key to continue ***");
+          printf ("                     \x1b[6m*** Press any key to continue ***\x1b[0m\n");
           getch ();
           continue;
         }
       }
       if (user_level == 1) {
-        fp = fopen ("part_pass", "r");
+        fp = fopen ("part_pass.txt", "r");
 
         if (fp == NULL) {
+          erase_everything();
           setpass (user_level);
-          printf ("                     *** Press any key to continue ***");
+          printf ("                     \x1b[6m*** Press any key to continue ***\x1b[0m\n");
           getch ();
           continue;
         }
       }
 
       printf ("* ENTER PASSWORD (Enter \"q\" to exit): ");
-      fflush (stdin);
+      fflush(stdin);
 
       j = 0;
-      while ((ch = _getch ()) != 13) // character 13 is enter
-      {
+      while ((ch = _getch ()) != 13) {
         if (ch == 8)
           continue;
         s[j] = ch;
@@ -178,18 +188,18 @@ again:
 
       if (strcmp (s, "q") == 0)
         break;
-
       a = HASH (s);
-      fread (&b, sizeof (b), 1, fp);
+
+      fscanf(fp, "%lld", &b);
       fclose (fp);
 
       if (a == b) {
-        printf ("                         *** Password matched ***\n");
-        printf ("                           *** Signing in...***\n");
-        delay (1);
+        printf ("                         \x1b[32m*** Password matched ***\x1b[0m\n");
+        printf ("                           \x1b[6m*** Signing in...***\x1b[0m\n");
+        delay (2);
         menu ();
       } else {
-        printf ("                          *** Wrong password ***\n");
+        printf ("                          \x1b[31m*** Wrong password ***\x1b[0m\n");
         printf ("                            *** Try Again ***\n");
         delay (1);
       }

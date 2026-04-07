@@ -1,34 +1,92 @@
 # depslib dependency file v1.0
-1689110835 source:c:\users\rangon\codeblocksprojects\secure-personal-diary\main.c
-	<stdio.h>
-	<stdlib.h>
-	<conio.h>
-	<string.h>
-	<time.h>
-	"diary.h"
-
-1689115311 c:\users\rangon\codeblocksprojects\secure-personal-diary\diary.h
-	<time.h>
-
-1695054392 source:c:\users\rangon\projects\secure-personal-diary\main.c
+1695525411 source:c:\users\rangon\projects\secure-personal-diary\main.c
 	<conio.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	"fucntion_prototypes.h"
 	"diary.h"
-	"hash.h"
-	"misc.h"
-	"password.h"
-	"test_header.h"
 
-1695021581 c:\users\rangon\projects\secure-personal-diary\hash.h
+1695410842 c:\users\rangon\projects\secure-personal-diary\diary.h
 
-1695021595 c:\users\rangon\projects\secure-personal-diary\test_header.h
+1695307735 c:\users\rangon\projects\secure-personal-diary\hash.h
 
-1695061991 c:\users\rangon\projects\secure-personal-diary\misc.h
+1695310192 c:\users\rangon\projects\secure-personal-diary\misc.h
 
-1695021591 c:\users\rangon\projects\secure-personal-diary\password.h
+1695307831 c:\users\rangon\projects\secure-personal-diary\password.h
 
-1695021551 c:\users\rangon\projects\secure-personal-diary\diary.h
+1695408861 c:\users\rangon\projects\secure-personal-diary\fucntion_prototypes.h
+
+1695538471 source:c:\users\rangon\projects\secure-personal-diary\delete_record.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695530075 source:c:\users\rangon\projects\secure-personal-diary\change_password.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695538533 source:c:\users\rangon\projects\secure-personal-diary\modify_record.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"diary.h"
+
+1695530113 source:c:\users\rangon\projects\secure-personal-diary\set_pass.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695530062 source:c:\users\rangon\projects\secure-personal-diary\add_record.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"diary.h"
+
+1695530064 source:c:\users\rangon\projects\secure-personal-diary\view_record.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"diary.h"
+
+1695410909 source:c:\users\rangon\projects\secure-personal-diary\hash.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695410938 source:c:\users\rangon\projects\secure-personal-diary\time.c
+	<time.h>
+
+1695530102 source:c:\users\rangon\projects\secure-personal-diary\show_today_record.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"diary.h"
+
+1695410913 source:c:\users\rangon\projects\secure-personal-diary\encryption.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695530110 source:c:\users\rangon\projects\secure-personal-diary\view_all_records.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"diary.h"
+
+1695530122 source:c:\users\rangon\projects\secure-personal-diary\erase_everything.c
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 
